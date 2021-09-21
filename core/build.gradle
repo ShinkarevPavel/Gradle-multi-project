@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0.0'
+jar.baseName('multi-project')
+
+
+repositories {
+    mavenLocal()
+    url = "c:/Users/Pavel_Shinkarev/.m2"
+    maven {
+        metadataSources {
+            artifact()
+        }
+    }
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+    implementation ('com.pavel209:utils:1.3.5')
+}
+
+test {
+    useJUnitPlatform()
+}
