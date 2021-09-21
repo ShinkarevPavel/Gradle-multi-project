@@ -1,6 +1,5 @@
 package com.epam.gradleUtils;
 
-
 import com.epam.gradle.StringUtils;
 
 public class Utils {

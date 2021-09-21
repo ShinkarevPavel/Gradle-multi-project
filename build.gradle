@@ -8,32 +8,21 @@ jar.baseName('multi-app-gradle')
 
 repositories {
     mavenLocal()
-    maven {
-        metadataSources {
-            artifact()
-        }
-    }
-    mavenCentral()
 }
 
-
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
-    implementation project (':core')
-    implementation project (':api')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.0'
 }
 
 
 jar {
-    //    noinspection GroovyAssignabilityCheck
+//        noinspection GroovyAssignabilityCheck
     manifest {
         attributes 'Main-Class': 'com.epam.gradleApp.App'
     }
-//    from (configurations.runtimeClasspath.files.collect{zipTree(it)})
+    from (configurations.runtimeClasspath.files.collect{zipTree(it)})
 }
-
-
 
 test {
     useJUnitPlatform()
